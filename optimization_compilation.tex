@@ -1,0 +1,525 @@
+%% bare_conf.tex
+%% V1.4
+%% 2012/12/27
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex,
+%%                    bare_jrnl_transmag.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+%\documentclass[conference]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+\documentclass[conference]{IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  %\usepackage{graphicx}
+  % declare the path(s) where your graphic files are
+  %\graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  \usepackage{graphicx}
+  %\usepackage{subfigure}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/tex-archive/info/epslatex/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+\usepackage{amssymb}
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Do not use the stfloats baselinefloat ability as IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/dblfloatfix/
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/url/
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+% Do not put math or special symbols in the title.
+\title{Spatial Based Feature Generation for Machine Learning Based Optimization Compilation}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Abid M. Malik}
+\IEEEauthorblockA{\textit{Institute of High Performance Computing, Singapore\\abidmuslim@gmail.com}}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+Modern compilers provide optimization options to obtain better performance for a given program. Effective selection of optimization options is a challenging task. Recent work has shown that machine learning can be used to select the best compiler optimization options for a given program. Machine learning techniques rely upon selecting features which represent a program in the best way. The quality of these features is critical to the performance of machine learning techniques. Previous work on feature selection for program representation is based on code size, mostly executed parts, parallelism and memory access patterns with-in a program. Spatial based information– \emph{how instructions are distributed with in a program}–has never been studied to generate features for the best compiler options selection using machine learning techniques. In this paper, we present a framework that address how to capture the spatial information with-in a program and
+transform it to features for machine learning techniques. An extensive experimentation is done using the SPEC2006 and MiBench benchmark applications. We compare our work with the IBM Milepost-gcc framework. The Milepost work gives a comprehensive set of features for using machine learning techniques for the best compiler options selection problem. Results show that the performance of machine learning techniques using spatial based features is better than the performance using the Milepost framework. With 66 available compiler options, we are also able to achieve 70\% of the potential speed up obtained through an iterative compilation.
+\end{abstract}
+
+\begin{IEEEkeywords}
+compiler option selection, compiler optimization, machine learning, auto- tuning, graph similarity
+\end{IEEEkeywords}
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+\section{Introduction}
+Modern compilers provide various optimization options for users to choose in order to obtain better running time for a given program. Proper selection of optimization is not easy for average users. Modern compilers provide various levels of optimizations. For example, three levels, O1, O2 and O3,
+are provided by the GNU Compiler Collection (GCC) \cite{REF1}. A higher optimization level will give better binary code than a lower optimization level. These optimization levels combine various compiler options using some heuristic. However, these optimization levels exploit only a portion of the available options. There is still a large potential that a better efficiency can be obtained by exploiting the rest of the available optimization options.\par
+
+With k compiler options, there exist 2k different ways compiler options can be selected for compiling a program. In order to get an optimal solution, an exhaustive search is needed. Studies have been done on searching algorithms to select a set of compiler options for optimal performance.
+Various strategies have been adopted that include iterative compilation searching [3] and predictive modeling [12]. Iterative compilation is a random searching of a compiler optimization space for a particular program, evaluating as many points as possible within a constrained time. The evaluation consists of simply compiling the code with a given set of optimizations, executing the binary and recording the run-time. The optimizations which provide the fastest runtime are considered the best for the particular program being compiled.\par
+
+Predictive modeling techniques use features to characterize an optimization space. Using known correct points, a model is built. The model is used to predict the best optimization options in the search space. Machine learning techniques have been used to build a predictive model for the best compiler options selection problem [9]. Machine learning techniques rely upon selecting relevant features of the search space. The quality of these features is critical to performance of machine learning techniques. Previous work on feature selection only captures characteristic of a program which is based on code size, mostly executed part, parallelism and memory access [8] patterns with-
+in a given program. However, no work has been done on feature generation which captures spatial information with-in a program. By spatial information, we mean how different instructions are distributed with-in a program. This information is important for many compiler optimizations e.g. instruction scheduling and register allocation. This information is stored in a compiler in the form of a data structure known as Data Flow Graph (DFG). DFG is a directed labeled graph. Each node represents an instruction and each edge represents data dependency between two instructions in a DFG. The distribution of instructions in a DFG is an important information which tells how data flows with-in a program.\par
+
+In this paper, we present a framework which generates features based on the spatial information of a DFG. These features can be used for selecting the best compiler options using machine learning techniques. We test our framework against the recently announced IBM Milepost-gcc framework. The Milepost framework gives a comprehensive set of features for representing a program that can be used
+to automate the compiler option selection process using machine learning techniques. Experimental results show that our framework outperforms the IBM Milepost-gcc feature framework on most of the applications using Decision Tree (DT) and Support Vector Machines (SVMs) learning. With our framework, using 66 compiler options in the GNU GCC, we are also able to gain 70\% of the maximum speedup obtainable by an iterative compilation search using 1000 iterations.\par
+
+The paper is organized as follows: Section II of the aper gives related work. Section III shows how machine learning is applied to compiler option selection problem. Section III-A presents a motivating example, showing why an approach like ours is needed. Section IV gives our framework for generating spatial based features. Section V gives experimentation. Section VI discusses the results and Section VII gives conclusion and future work in this area.
+
+\section{RELATED WORK}
+One of the first researchers to incorporate machine learning into compiler for optimization were McGovern and Moss [10] who used reinforcement learning for scheduling of straight-line code. Cavazos et al. [6] extended this idea by learning whether or not to apply instruction scheduling. Stephenson
+and Amarasinghe [16] looked at tuning the unroll factor using supervised classification techniques such as K-Nearest Neighbor (KNN) and SVMs.\par
+
+Subsequent researchers have considered predictive models using machine learning techniques to automatically tune a compiler for an existing micro- architecture. These models use program’s features to focus the search of optimization space in promising areas. Agakov et al. [2] use code features to characterize a given program while Cavazos et al. [5] investigate the use of performance counters. Leather et al. [13] give grammar to select the features to represent a program to tune unrolling optimization. Christophe et al. [8] use hardware features for selecting the best compiler 
+options for a given architecture.\par
+
+Recently the Milepost-gcc framework has been developed by the IBM Haifa to drive the compiler optimization process based on machine learning. The framework is very comprehensive in terms of capturing all important characteristics of DFG for a given program. Interested readers can consult
+the work by Fursin et al. [9] for complete list of features. However, the work fails to capture the spatial information of DFGs. In this work, we use the IBM Milepost-gcc framework as a reference to compare the quality and performance of our framework.
+
+\section{USE OF MACHINE LEARNING IN COMPILER}
+In this section, we briefly describe how machine learning is deployed with-in a compiler for selecting good options for a better performance. The state of a compiler is examined before any optimization is applied. The Static Single Assignment (SSA) state with-in a compiler is that point [9]. For more detail on SSA state, please see [11]. Data which is important for various optimizations is collected at SSA level. This data includes data structures like abstract syntax tree, control flow graph and data flow graph. The data is transferred into a set of features which is used by machine learning tools. The quality of features is important for the quality of machine learning tool. A training set is generated using a number of benchmark applications. These applications are transferred into feature vectors using the feature set. The benchmark applications are compiled multiple times; each time with different compiler options and by running the newly compiled program and discovers which options are the best for a given application. The training set consists of tuples. Each tuple consists of a feature vector of a program and the best compiler options for the program. The training set is given to a machine learning tool to build a model. The model’s job is to predict the best compiler options for new feature vectors from unseen applications.\par
+
+The advantage of using a machine learning technique is that a compiler writer is not required to develop a new heuristic for selecting the best compiler options for every new architecture. The process can easily be repeated whenever there is a change in the underlying architecture.
+However, effort has now been transferred from tuning the heuristic by hand to creating the right features for the machine learning techniques.
+
+\subsection{\textit{Motivation Example}}
+In this section, we demonstrate that features based on the spatial information of data flow graphs is important for the performance of machine learning techniques for the best compiler options selection problem. Figure 1 shows two data flow graphs with different structure layouts. The number besides an edge is latency which is the minimum number of cycles by which two instructions should be separated in any legal schedule for a given program. Assume, we have three types of instructions; A,B and C. For simplicity, consider six features: f1 ) number of instructions f2 ) number of edges f3 ) critical path distance–the minimum number of cycles by which a root node and a sink node1 in a DFG should be separated in any legal schedule for the DFG when there are unlimited physical resources in a processor– f4 ) number of instructions of type A  f5 ) number of instructions of type B f6 ) number of instructions of type C. These features are also included in the IBM Milepost-gcc framework [9]. With this set of features, the two graphs will have same feature vector ,i.e., < f1 = 5, f2 = 4, f3 = 4, f4 = 3, f5 = 1, f6 = 1 >.\par
+
+1 A node with-out successor nodes is a sink node. A node with no predecessor nodes is a root node.
+
+
+Suppose, X is a set of compiler options which is the best for G2 . If G2 is used as a training set to build a model, the same set of compiler options will be predicted for G1 . However, we can see that G2 is a serial code and can not be benefited from optimizations that are targeted towards multi-issue processor. G1 has parallelisam and can be benefited from such compiler optimizations. Using the spatial information of each instruction type, one can easily differentiate the two graphs. Consider levels of each node. The level of a node is the maximum number of edges between a root node and that node. In G1 , instruction A is at level 0 and 2. Instruction B and instruction C are at level 1. In G2 , instruction A is at level 0, 2 and 4. Instruction C is at level 1 and instruction B is at level 3.
+
+\section{OUR FRAMEWORK}
+
+Program features which are used for selecting the best compiler options using machine learning can be classified into four classes: 1) code size based features 2) hot instructions based features 3) parallelisam based features 4) memory access based features. These features are
+considered good indicators of a program’s performance. Features based on code size, like number of instructions, control the behavior of cache. Features based on hot instructions–instructions that are mostly executed–control execution time of a program. Features based on parallelism control optimizations like instruction scheduling, register allocation, loop unrolling etc. Features like number of predecessors or successors of an instruction and critical path distance etc. come under this class. Memory access patterns in a program control behavior of cache. Features like number of load and store instructions come in this class. All this information can be determined at SSA level in a compiler. However, none of the afore-mentioned classes capture the spatial information with-in a DFG. In this work, we try to remove this gap of
+information. We use the concept of histogram to capture the spatial information in a DFG.
+
+
+A histogram is a bar graph which captures weight-age of each element in a data set. People have used this data structure in image processing to capture spatial information [14]. In our case, DFG is a data set and each node of the graph is an element of the data set. The weight-age of each node is how it is located with-in a given DFG. Consider the graph G3 in Figure 2. For simplicity, we assume that there is only one type of instruction in G3 and each edge has latency of one cycle. To build a histogram for G3 , each node will have a bucket. The height of each bucket represents the weight-age of each node. For our work, the location of a node with respect to root and sink nodes of a DFG is a key information.
+We calculate the weight-age of each node using Equation 1.\pra
+
+Wi = {Dir 2 + Dis 2 }1/2 (1)
+
+Where Dir is the critical path distance of Node i from the root node r and Dis is the critical path distance of Node i from the sink node s. Consider Node 2 in Figure 2. The node has critical path distance of 1 cycle from the root node ,i.e., Node 1 and has critical path distance of 2 cycles from the sink node, i.e., Node 7. Using Equation 1, the weight-age of Node 2 is 2.236 cycles. We consider critical path distance to sink node + 12 as the width of each bucket. Therefore, the bucket for Node 2 has width of 3 cycles. The bucket for Node 1 has weight-age of 3 cycles and width of 4 cycles. The bucket for Node 7 has weight-age of 3 cycles and width of 1 cycle. Bucket for Node 3 has weight-age of 2.236 cycles and width of 3 cycles. The buckets for Node 4, 5 and 6 have weight-ages and widths of 2.236 cycles and 2 cycle respectively. Figure 3 gives a histogram for G3 . In order to give some uniqueness to the histogram, we sort it according to the weight-age of node. If two or more
+nodes have same weight-age then we sort them according to the width of bucket as shown in Figure 4. In Engineering
+
+2 We add 1 so a bucket for a sink node can have a width of at-least 1 cycle.
+
+Mechanics, concept of Center of Area is used to capture the point of concentration of cross- sectional areas of structures. We use the center of area of histogram to capture the node distribution with- in a DFG. This can be calculated using Equation 2.\pra
+
+Where d is the distance of center of area of histogram from some reference axis and di is the distance of center of area of bucket i from the same reference axis. Ai is the area of bucket i and can be calculated by multiplying the weight-age of each bucket by its width. Using Equation 2, d in Figure 3 is 9.765 cycles. In Figure 3, d4 is the distance of center of area for bucket 4.
+
+Two isomorphic graphs will have same distribution of sorted histograms and hence will have same distances of center of areas from some reference axis. However, the reveres is not true ,i.e., two histograms having same distances of center of areas from some reference axis might not be isomorphic. The other important observation is that if two graphs are similar but not isomorphic then the distances of their center of areas will be very close to each other from some reference axis. This observation is the base of our technique. If two graphs are not isomorphic but are similar to some extent then this similarity can be quantified using the center of area of histogram. 
+
+
+Data flow graph of a program is a directed labeled graph. An important question is: how to capture distribution of different labels or instruction? This can be done by preparing a histogram for each label and then calculating the center of area of histograms for each label. Consider the two DFGs in Figure 5 . Both graphs have three types of instructions i.e. A, B and C. Node A1 means that Node 1 is of type A. As we have three types of instructions so we will have three histograms ,i.e., one for each instruction type.
+
+Figure 6 (a) (b) and (c) show three sorted histogram distributions for instruction type A, B and C respectively for G1 and G2. We calculate the distance of center of area for each histogram from the vertical axis. The distance of center of area of each histogram will become a feature. Using these features, we will have a feature vector < 3.731, 1, 1 > for G1 and a feature vector < 4.825, 2, 1 > for G2 . On the other hand, if we use the Milepost-gcc framework, feature set from Section III-A, then feature vectors for both the graphs are same. Hence, the Milepost feature framework is misleading in this case.
+
+The Milepost work gives 55 features ,i.e., the length of feature vector is 55. For our approach the length of feature vector is equal to the number of available labels or instructions in the data set. For this, we scanned the SPEC2006 benchmark applications for all possible operations in DFGs. We found 110 operations or labels. Therefore, we can have a feature vector of length 110. However, in order to avoid
+the curse of dimensionality phenomenon in the machine learning technique, we calculated the frequency of each operations in the data set and took the top 55 high frequency labels as features for our approach.
+
+\section{EXPERIMENTATION}
+
+In this section, we briefly describe the experimental setup. We used GCC 4.4.1 to extract DFGs at SSA level. We used the IBM Milepost- gcc to implement the Milepost framework. We used 66 GCC optimization options used by the work [15]. We used C applications from the MiBench and SPEC2006 benchmark suites. These experiments were run on the Intel dual core running at 2.0 GHz with 4.0 Gb of RAM. We used DFG of a hot function–a function which is mostly executed–to represent a program. We used the gprof tool to determine hot functions in the benchmark
+applications.
+
+We build a training set using the SPEC2006 C applications by finding the best compiler options for each application
+using the Genetic Algorithm (GA) from the work [7]. We used 1000 evolutions for the GA approach. Each run was repeated five times so the speedups were not caused by cache priming etc.
+
+In our experimentation we tried to keep the implementation similar to the work [9]. We used DT learning as it was also used by the work [9] as well. We used SVMs as they are considered the best tool for classification and regression problems. We implemented both linear and non-linear SVMs using the SVMlight freely available on the web [17]. We used the default values for various parameters set by the SVMlight. However, for the non-linear SVMs, we used radial basis function kernel with σ = 1 and the upper bound parameter (C) of the SVM equal to 10. We
+used the C4.5 algorithm for DT implementation [4]. The same was used by the Milepost work. Again, we used the default values given by the developer for various parameters. 
+
+We considered 66 compiler options. We assumed that they were independent of each other. The same assumption was adopted by the Milepost work. We considered each option as a class and tried to learn a model for it using DT and SVMs. We trained 66 models using DT and SVMs ,i.e., one
+for each compiler option.
+
+\section{RESULTS}
+
+
+In this section, we discuss our results. Figure 7 and 8 show the performance of DT and SVMs learning using our framework as compare to the Milepost framework. The vertical axes of graphs give the percentage improvement in the execution time of a program over the execution time
+when the same program is compiled with the GCC compiler using -O3 level. This can be calculated using Equation 3.
+
+
+Where X is the percentage improvement in the execution time of a program, T1 is the execution time when the same program is compiled using the - O3 level3 and T2 is the execution time of the same program when compiled with optimization options predicted by a model.
+
+
+We used C applications in the SPEC2006 benchmark for building a training set. The Mibench C applications were used as a test set.
+
+Figure 7 gives the comparison of our approach using the top 55 features against the Milepost approach. Again, our approach out performs the Milepost work on most of the applications. The maximum and minimum gain over the -O3 level by the Milepost-gcc is 2.4\% and 1\% respectively using DT and 2.7\% and 1.2\% respectively using linear SVMs. The maximum and minimum gain over the -O3 level by our approach is 2.9\% and 1\% respectively using DT and 3.2\% and 1.2\% respectively using linear SVMs. With the Milepost framework, the average gain in execution time is 1.6\% and 1.91\% using DT and linear SVMs respectively. With our approach, the average gain in execution time is 1.7\% and 2.2\% using DT and linear SVMs respectively. On can note that we are able to achieve 70\% of iterative approach using our features with the SVMs.
+
+
+Figure 8 gives the comparison of our approach using the top 25 spatial features against the Milepost-gcc framework using DT and linear SVMs learning. Again, our approach out performs the Milepost-gcc on most of the applications. The maximum and minimum gain over the -O3 level by our approach using the top 25 features is 2.3\% and 1\% respectively using the DT learning and 2.75\% and 1.2\% respectively using the linear SVMs. On average, with only 25 features, our approach is gaining 1.5\% and 2.0\% improvement using DT and linear SVMs respectively.
+
+
+We got similar results using non-linear SVM. However, due to the space constraint we are not presenting them here. We also combined the spatial based top 55 features with the Milepost features and gave the combined set of features to DT. We did not find much improvement in the execution
+time of programs. However, in more than 70\% decision trees, spatial based features were the top features. This clearly shows that the features based on spatial information are more informative than the Milepost features for building better machine learning models.
+
+
+
+
+\section{CONCLUSION AND FUTURE WORK}
+
+
+In this work, we showed that the features based on the spatial information of data flow graphs have significant potential in the auto-tuning of compiler optimization. We presented in this paper a novel technique to represent this information as features for machine learning tools. We tested our approach extensively using the SPEC2006 and Mibench benchmarks and compared it against the IBM Milepost-gcc framework. The results showed that our framework clearly out-performed the Milepost framework on almost all benchmark applications using DT and SVMs learning. 
+
+In future, we plan to use the features based on the spatial information to investigate the automatic selection of better order of optimization passes and fine-grained tuning of transformation parameters for important optimization e.g. unrolling factor of loop unrolling optimization.
+
+
+
+
+
+% that's all folks
+\end{document}
+
